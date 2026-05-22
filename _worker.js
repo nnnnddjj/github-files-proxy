@@ -259,14 +259,14 @@ function getIndexHtml() {
         
         <div class="example">
             <p>📋 快速测试（点击自动填入）：</p>
-            <a onclick="setExample('https://raw.githubusercontent.com/openRin/Rin/main/README.md')">raw 格式</a>
-            <a onclick="setExample('https://github.com/openRin/Rin/blob/main/README.md')">blob 格式</a>
+            <a onclick="setExample('https://raw.githubusercontent.com/nnnnddjj/github-files-proxy/main/README.md')">raw 格式</a>
+            <a onclick="setExample('https://github.com/nnnnddjj/github-files-proxy/main/README.md')">blob 格式</a>
         </div>
         
         <div class="info-note">
             💡 <strong>直接下载技巧</strong><br>
             直接访问：<code>https://你的域名.pages.dev/用户/仓库/分支/文件.txt</code><br>
-            例如：<code>https://你的域名.pages.dev/openRin/Rin/main/README.md</code>
+            例如：<code>https://你的域名.pages.dev/nnnnddjj/github-files-proxy/main/README.md</code>
         </div>
         
         <footer>
