@@ -260,7 +260,7 @@ function getIndexHtml() {
         <div class="example">
             <p>📋 快速测试（点击自动填入）：</p>
             <a onclick="setExample('https://raw.githubusercontent.com/nnnnddjj/github-files-proxy/main/README.md')">raw 格式</a>
-            <a onclick="setExample('https://github.com/nnnnddjj/github-files-proxy/main/README.md')">blob 格式</a>
+            <a onclick="setExample('https://github.com/nnnnddjj/github-files-proxy/blob/main/README.md')">blob 格式</a>
         </div>
         
         <div class="info-note">

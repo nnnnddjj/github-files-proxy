@@ -28,7 +28,7 @@ https://你的域名.pages.dev/用户/仓库/分支/文件路径
 
 示例：
 ```
-https://你的域名.pages.dev/openRin/Rin/main/README.md
+https://你的域名.pages.dev/nnnnddjj/github-files-proxy/main/README.md
 ```
 
 浏览器访问或 `curl` 直接下载，无需额外参数。
@@ -41,7 +41,7 @@ GET /download?url=<GitHub文件链接>
 
 示例：
 ```bash
-curl "https://你的域名.pages.dev/download?url=https://github.com/openRin/Rin/blob/main/README.md" -O
+curl "https://你的域名.pages.dev/download?url=https://github.com/nnnnddjj/github-files-proxy/blob/main/README.md" -O
 ```
 
 ## 部署到 Cloudflare Pages
