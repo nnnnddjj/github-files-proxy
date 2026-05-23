@@ -28,7 +28,7 @@ https://你的域名.pages.dev/用户/仓库/分支/文件路径
 
 示例：
 ```
-https://你的域名.pages.dev/nnnnddjj/github-files-proxy/main/README.md
+https://9-9w4.pages.dev/nnnnddjj/github-files-proxy/main/README.md
 ```
 
 浏览器访问或 `curl` 直接下载，无需额外参数。
@@ -41,22 +41,23 @@ GET /download?url=<GitHub文件链接>
 
 示例：
 ```bash
-curl "https://你的域名.pages.dev/download?url=https://github.com/nnnnddjj/github-files-proxy/blob/main/README.md" -O
+curl "https://9-9w4.pages.dev/download?url=https://raw.githubusercontent.com/nnnnddjj/github-files-proxy/main/_worker.js" -O
+```
+```bash
+curl "https://9-9w4.pages.dev/download?url=https://github.com/nnnnddjj/github-files-proxy/blob/main/README.md" -O
 ```
 
 ## 部署到 Cloudflare Pages
 
-### 方式一：手动上传（推荐，最简单）
+### 方式一：手动上传（推荐）
 
-无需 GitHub 仓库，直接上传单个文件即可完成部署。
+1. 注册并登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)，在左侧找到 **构建 - 计算 - Workers 和 Pages**
+2. 点击右上角的 **创建应用程序** → 选择网页最下面的 **想要部署 Pages？开始使用** 标签 → 点击下面**拖放文件**选项框内的 **开始使用**
+3. 为项目起一个名称（如 `gh-proxy`），点击 **创建项目**
+4. 将 `_worker.js` 文件放入一个空白文件夹，再将这个文件夹拖入上传区域，点击 **部署站点**
+5. 部署完成，访问分配的 `https://gh-proxy-xxx.pages.dev`（或你自定义的名称）即可使用
 
-1. 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)，进入 **Workers & Pages**
-2. 点击 **Create** → 选择 **Pages** 标签 → 点击 **Upload assets**
-3. 为项目起一个名称（如 `gh-proxy`），点击 **Create project**
-4. 将 `_worker.js` 文件拖入上传区域，点击 **Deploy site**
-5. 部署完成，访问分配的 `https://gh-proxy.pages.dev`（或你自定义的名称）即可使用
-
-> **更新文件**：进入项目 → **Deployments** → **Upload assets** → 重新上传新版 `_worker.js` 即可。
+> **更新文件**：进入项目点击右上角的 → **创建部署** → **重新上传含有新版 `_worker.js`的文件夹**即可。
 
 ### 方式二：连接 GitHub 仓库（适合持续迭代）
 
