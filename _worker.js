@@ -2,6 +2,7 @@
 // 支持两种使用方式：
 // 1. 访问根路径：显示网页界面，输入链接下载
 // 2. 直接访问路径：https://项目.pages.dev/用户/仓库/分支/文件.txt 自动下载
+// 3. 使用/download API 接口：https://项目.pages.dev/download?url=https://github.com/用户/仓库/blob/分支/文件.txt 
 
 export default {
   async fetch(request, env) {
@@ -234,13 +235,6 @@ function getIndexHtml() {
             color: #aaa;
             font-size: 12px;
         }
-        code {
-            background: #f0f0f0;
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-family: monospace;
-            font-size: 12px;
-        }
     </style>
 </head>
 <body>
@@ -259,14 +253,18 @@ function getIndexHtml() {
         
         <div class="example">
             <p>📋 快速测试（点击自动填入）：</p>
-            <a onclick="setExample('https://raw.githubusercontent.com/nnnnddjj/github-files-proxy/main/README.md')">raw 格式</a>
+            <a onclick="setExample('https://raw.githubusercontent.com/nnnnddjj/github-files-proxy/main/_worker.js')">raw 格式</a>
             <a onclick="setExample('https://github.com/nnnnddjj/github-files-proxy/blob/main/README.md')">blob 格式</a>
         </div>
         
         <div class="info-note">
             💡 <strong>直接下载技巧</strong><br>
-            直接访问：<code>https://你的域名.pages.dev/用户/仓库/分支/文件.txt</code><br>
-            例如：<code>https://你的域名.pages.dev/nnnnddjj/github-files-proxy/main/README.md</code>
+            直接访问：<br>
+            https://9-9w4.pages.dev/nnnnddjj/github-files-proxy/main/README.md<br>
+
+            使用download API 接口直接下载：<br>
+            https://9-9w4.pages.dev/download?url=https://raw.githubusercontent.com/nnnnddjj/github-files-proxy/main/_worker.js <br>
+            https://9-9w4.pages.dev/download?url=https://github.com/nnnnddjj/github-files-proxy/blob/main/_worker.js 
         </div>
         
         <footer>
