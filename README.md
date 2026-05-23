@@ -2,6 +2,12 @@
 
 基于 Cloudflare Pages Functions 的 GitHub 文件加速代理，解决国内直接访问 `raw.githubusercontent.com` 缓慢或不可访问的问题。
 
+## 演示网站
+[https://9-9w4.pages.dev](https://9-9w4.pages.dev/)
+
+[https://6-af3.pages.dev](https://6-af3.pages.dev/)
+
+
 ## 功能特性
 
 - **网页界面**：访问根路径即显示可视化下载页面，支持粘贴链接一键下载
