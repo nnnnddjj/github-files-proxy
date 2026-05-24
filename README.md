@@ -2,6 +2,10 @@
 
 基于 Cloudflare Workers 的 GitHub 文件加速代理，解决国内访问 `raw.githubusercontent.com` 缓慢或不可用的问题。
 
+## 演示网站
+
+[https://9-9w4.pages.dev](https://9-9w4.pages.dev/)
+
 ## 功能
 
 - **网页界面**：输入 GitHub 文件链接，自动生成加速地址并提供一键下载
