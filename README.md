@@ -1,54 +1,38 @@
-# GitHub 文件加速下载
+# GitHub 文件加速器
 
-基于 Cloudflare Pages Functions 的 GitHub 文件加速代理，解决国内直接访问 `raw.githubusercontent.com` 缓慢或不可访问的问题。
+基于 Cloudflare Workers 的 GitHub 文件加速代理，解决国内访问 `raw.githubusercontent.com` 缓慢或不可用的问题。
 
-## 演示网站
-[https://9-9w4.pages.dev](https://9-9w4.pages.dev/)
+## 功能
 
-## 功能特性
-
-- **网页界面**：访问根路径即显示可视化下载页面，支持粘贴链接一键下载
-- **直链加速**：通过 URL 路径直接代理下载，适合脚本/命令行调用
-- **多格式支持**：`.txt` `.bat` `.reg` `.cmd` `.zip` `.jpg` `.png` `.md` 及任意二进制文件
-- **链接兼容**：自动识别并转换 `blob` 格式与 `raw` 格式的 GitHub 链接
-- **缓存优化**：响应头带 `Cache-Control: public, max-age=3600`，减少重复请求
+- **网页界面**：输入 GitHub 文件链接，自动生成加速地址并提供一键下载
+- **一键复制**：加速链接、curl、wget 三条命令各配复制按钮，点击即拷贝
+- **直链代理**：通过 URL 路径直接代理下载，适合脚本 / 命令行调用
+- **链接兼容**：自动识别 `github.com/blob/` 格式并转为 `raw.githubusercontent.com`
 
 ## 使用方式
 
-### 方式一：网页界面
+### 网页界面
 
-访问部署域名根路径，在输入框中粘贴 GitHub 文件链接后点击下载按钮。
-
-支持以下链接格式：
-- `https://github.com/用户/仓库/blob/分支/文件路径`
-- `https://raw.githubusercontent.com/用户/仓库/分支/文件路径`
-
-### 方式二：URL 直链（推荐用于脚本）
+访问部署域名，粘贴 GitHub 文件链接，自动渲染出三条可复制的命令：
 
 ```
-https://你的域名.pages.dev/用户/仓库/分支/文件路径
+加速链接              [复制链接]
+curl -O <加速链接>    [复制curl]
+wget <加速链接>       [复制wget]
 ```
 
-示例：
-```
-https://9-9w4.pages.dev/nnnnddjj/github-files-proxy/main/README.md
-```
+点击「下载」按钮直接在浏览器中触发下载，「清除」按钮清空输入框。
 
-浏览器访问或 `curl` 直接下载，无需额外参数。
-
-### 方式三：`/download` API 接口
+### URL 直链
 
 ```
-GET /download?url=<GitHub文件链接>
+https://你的域名/用户/仓库/分支/文件路径
 ```
 
-示例：
-```bash
-curl "https://9-9w4.pages.dev/download?url=https://raw.githubusercontent.com/nnnnddjj/github-files-proxy/main/_worker.js" -O
+也支持粘贴完整 GitHub URL：
+
 ```
-```bash
-curl "https://9-9w4.pages.dev/download?url=https://github.com/nnnnddjj/github-files-proxy/blob/main/README.md" -O
-```
+https://你的域名/https://github.com/用户/仓库/blob/分支/文件路径
 
 ## 部署到 Cloudflare Pages
 
